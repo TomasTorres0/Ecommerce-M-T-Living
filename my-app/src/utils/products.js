@@ -1,12 +1,38 @@
-const products = [
-    {id: 1, name:'Sillon Ivory', description:'Medidas Standar', stock:'number',Image:"https://i2.wp.com/diforteliving.com.ar/wp-content/uploads/2022/10/9d6a2933-4d74-4bb7-ae5c-d590354fdc20.jpg?fit=320%2C320&ssl=1"},
-    {id: 2, name:'Sillon Mv Esquinero', description:'5mts x 5mts', stock:'number'},
-    {id: 3, name:'Sillon Escandinado', description:'Estilo Natural', stock:'number'},
-    {id: 4, name:'Sillon Lemon Crush', description:'Maquiaveli', stock:'number'}
+export const products = [
+    {id: 1, title:'pizza', category: 'vegetariana', description:'Grande de Muzzarella', price: 100, pictureUrl: 'https://d320djwtwnl5uo.cloudfront.net/recetas/cover/pizza_Mh3H4eanyBKEsStv1YclPWTf9OUqIi.png', stock:'number'},
+    {id: 2, title:'hamburguesa', category: 'carne', description:'string', price: 100, pictureUrl: 'https://http2.mlstatic.com/D_NQ_NP_2X_788111-MLA42998806780_082020-F.webp', stock:'number'},
+    {id: 3, title:'ensalada', category: 'vegetariana', description:'string', price: 100, pictureUrl: 'https://t2.rg.ltmcdn.com/es/posts/3/2/6/ensalada_de_verduras_variadas_57623_600.jpg', stock:'number'},
+    {id: 4, title:'empanadas', category: 'carne', description:'string', price: 100, pictureUrl: 'https://media.todojujuy.com/p/534d687c1d154c44205e5643b9091a31/adjuntos/227/imagenes/003/221/0003221167/770x0/smart/imagepng.png', stock:'number'}
   ]
-
-const getProducts = ( ) => {
-    const promise = new Promise ((resolve) => {
-        return resolve(products)
-    } )
-}
+  
+  export const getAllProducts = () => {
+    const promise = new Promise((resolve) => {
+      setTimeout(() => {
+        return resolve(products);
+      }, 2000)
+    })
+  
+    return promise
+  };
+  
+  export const getProduct = (id) => {
+    const promise = new Promise((resolve) => {
+      const result = products.find((product) => product.id === parseInt(id))
+      setTimeout(() => {
+        return resolve(result);
+      }, 2000)
+    })
+  
+    return promise
+  };
+  
+  export const getProductsByCategory = (categoryId) => {
+    const promise = new Promise((resolve) => {
+      const results = products.filter((product) => product.category === categoryId);
+      setTimeout(() => {
+        return resolve(results);
+      }, 2000)
+    })
+  
+    return promise
+  };
