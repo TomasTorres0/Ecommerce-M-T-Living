@@ -7,14 +7,14 @@ const NavBar = () => {
     <Navbar bg="dark" variant="dark">
       <Container>
         <Navbar.Brand as={Link} to='/'>
-          ShowRoom
+          Tienda de Productos
         </Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link as={Link} to='/'>
               Home
           </Nav.Link>
-          <Nav.Link as={Link} to='/category/bebidas'>Sillas</Nav.Link>
-          <Nav.Link as={Link} to='/category/alimentos'>Respaldos</Nav.Link>
+          <Nav.Link as={Link} to='/category/carne'>Con Carne</Nav.Link>
+          <Nav.Link as={Link} to='/category/vegetariana'>Vegetariana</Nav.Link>
         </Nav>
         <CartWidget />
       </Container>
