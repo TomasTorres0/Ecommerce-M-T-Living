@@ -68,7 +68,7 @@ function App() {
     }, []);
 
     return (
-      <BrowserRouter>
+      <BrowserRouter >
         <CacheProvider>
           <NavBar />
           {/* <Events /> */}
